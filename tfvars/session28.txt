@@ -1,0 +1,36 @@
+multi env
+--------
+tfvars
+workspaces
+diff repos
+
+why do we use tfvars ? 
+to override the default variables from variables.tf file
+
+I need two environments
+mongodb-env, redis-dev
+mongodb-dev.daws67s.online
+
+same code but different configuration 
+one approach is without duplicating the code, the single code by using different variables we can num of environments(like dev, qat, prod)
+
+different buckets to maintain the state(s3)
+
+Got to s3 and create two buckets
+daws67s-state-dev & daws67s-state-prod
+
+and creae two tables in dynamoDB
+daws67s-locking-dev & daws67s-locking-prod
+Partition key --->  LockID
+
+
+command 1: terraform init -backend-config=dev/backend.tf
+terraform plan -var-file=dev/dev.tfvars
+terraform apply -var-file=dev/dev.tfvars   we have load this file to override the default variables from variables.tf file
+
+to load for prod in this example
+
+terraform init -reconfigure -backend-config=prod/backend.tf
+
+terraform plan -var-file=prod/prod.tfvars
+terraform apply -var-file=prod/prod.tfvars

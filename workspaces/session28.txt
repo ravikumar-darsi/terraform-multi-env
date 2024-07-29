@@ -1,0 +1,32 @@
+terraform init
+
+terraform workspace list
+
+terraform workspace new dev --> I'm in new workspace
+
+terraform workspace new prod
+terraform plan
+terraform workspace select dev
+terraform plan
+terraform apply 
+
+
+Now we have two ways of creation 
+and their is  third ways
+Create different repo for different env
+
+In approach 1 
+pros --> same code
+cons --> same code for multiple env, you need to be very careful
+because whatever changes you do that will apply to prod
+
+In approach 2 
+pros -->  same code 
+cons -->  same code for multiple env, you need to be very careful
+because whatever changes you do that will apply to prod.
+
+terraform is maintaining same bucket that may cause errors and diffcult to maintain
+
+In approach 3 
+pros --> since everything is diff, you no need to worry
+cons --> code duplication, you need to maintain 2 repos ( use case: large projects)
