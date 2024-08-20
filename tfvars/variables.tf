@@ -8,9 +8,9 @@ variable "instance_names" {
 }
 
 variable "zone_id" {
-  default = "Z06421641LWYSS1T924TY"
+  default = "Z0010052P5AJGIQ7R5VQ"
 }
 
 variable "domain_name" {
-  default = "sub.daws67s.online"
+  default = "daws67s.online"
 } 
