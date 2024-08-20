@@ -25,7 +25,7 @@ pros -->  same code
 cons -->  same code for multiple env, you need to be very careful
 because whatever changes you do that will apply to prod.
 
-terraform is maintaining same bucket that may cause errors and diffcult to maintain
+terraform is maintaining same bucket that may cause errors and diffcult to maintain, diffcult to maintain vaiables
 
 In approach 3 
 pros --> since everything is diff, you no need to worry

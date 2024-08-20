@@ -27,6 +27,7 @@ Partition key --->  LockID
 command 1: terraform init -backend-config=dev/backend.tf
 terraform plan -var-file=dev/dev.tfvars
 terraform apply -var-file=dev/dev.tfvars   we have load this file to override the default variables from variables.tf file
+terraform destroy -var-file=dev/dev.tfvars
 
 to load for prod in this example
 
@@ -34,3 +35,7 @@ terraform init -reconfigure -backend-config=prod/backend.tf
 
 terraform plan -var-file=prod/prod.tfvars
 terraform apply -var-file=prod/prod.tfvars
+terraform destroy -var-file=prod/prod.tfvars
+
+to destroy the resource in the dev env you should reconfigure into dev using this
+terraform init -reconfigure -backend-config=dev/backend.tf
